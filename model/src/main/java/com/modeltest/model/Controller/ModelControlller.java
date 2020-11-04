@@ -20,7 +20,7 @@ public class ModelControlller {
 
     @GetMapping("/")
     public String index() {
-        return "model-htm";
+        return "login";
     }
 
     @PostMapping("/connect")
