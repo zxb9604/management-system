@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <!--移动端更好的适应-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dist/semantic/semantic.min.css">
-    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" th:href="@{dist/semantic/semantic.min.css}">
+    <link rel="stylesheet" th:href="@{css/my.css}">
     <title>标签</title>
 </head>
 <body>
@@ -273,5 +273,6 @@
     });
 
 </script>
+    <script th:src="static/js/jump.js"></script>
 </body>
 </html>

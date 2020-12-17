@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <!--移动端更好的适应-->
@@ -14,11 +14,11 @@
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">Blog</h2>
-                <a href="#" class="active m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
-                <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
-                <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
-                <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档</a>
-                <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+                <a href="#" class="active m-item item m-mobile-hide" onclick="jump('index')"><i class="home icon"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hide" onclick="jump('types')"><i class="idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide" onclick="jump('tags')"><i class="tags icon"></i>标签</a>
+                <a href="#" class="m-item item m-mobile-hide" onclick="jump('archives')"><i class="clone icon"></i>归档</a>
+                <a href="#" class="m-item item m-mobile-hide" onclick="jump('about')"><i class="info icon"></i>关于我</a>
                 <div class="right m-item item m-mobile-hide">
                     <div class="ui action input">
                         <input type="text" placeholder="输入关键字">
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="five wide column">
                                     <a href="#" target="_blank">
-                                        <img src="images/test.jpg"  alt="" class="ui rounded m-image-size-square image">
+                                        <img src="images/test.jpg" alt="" class="ui rounded m-image-size-square image">
                                     </a>
                                 </div>
                             </div>
@@ -310,7 +310,7 @@
                     <!-- 中间内容右边二维码模块开始 -->
                     <h4 class="ui horizontal divider header">扫码关注我</h4>
                     <div class="ui centered card" style="width: 11em">
-                        <img src="images/wechat.png" alt="" class="rounded image"  style="width: 11em"/>
+                        <img src="images/wechat.png" alt="" class="rounded image" style="width: 11em"/>
                     </div>
                     <!-- 中间内容右边二维码模块结束 -->
 
@@ -364,12 +364,18 @@
     <!--底部内容结束------------------------------------------>
 
 
-<script src="dist/jquery/jquery-3.4.1.min.js"></script>
-<script src="dist/semantic/semantic.min.js"></script>
+<script th:src="dist/jquery/jquery-3.4.1.min.js"></script>
+<script th:src="dist/semantic/semantic.min.js"></script>
 <script>
     $('.m-menu.m-toggle').click(function () {
         $('.m-item').toggleClass('m-mobile-hide');
     });
+    function jump(name){
+        if(name != null) {
+            location.href = "/jump/" + name;
+        }
+    }
 </script>
 </body>
+<!--<script type="text/javascript" th:src="@{/js/jump.js}"></script>-->
 </html>
