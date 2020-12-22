@@ -4,7 +4,7 @@ package com.example.mybatis.mapper;
 import com.example.mybatis.entity.Department;
 import org.apache.ibatis.annotations.*;
 
-//@Mapper
+@Mapper
 public interface DeptMapper {
 
     @Select("select * from department where id=#{id}")

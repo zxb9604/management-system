@@ -3,11 +3,11 @@ package com.example.mybatis.entity;
 import lombok.Data;
 
 @Data
-public class person {
+public class Person {
 
     private int id;
 
-    private String name;
+    private String PersonName;
 
     private int department_id;
 }

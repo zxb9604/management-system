@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatis.mapper.PersonMapper">
+
+    <select id="getPersonById" parameterType="int" resultType="person">
+         select * from person where id = #{id}
+    </select>
+
+    <insert id="insertPerson">
+        insert into person(PersonName,department_id) values (#{PersonName},#{department_id})
+    </insert>
+</mapper>
